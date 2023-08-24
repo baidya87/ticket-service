@@ -44,7 +44,7 @@ public class TicketService {
     }
 
     public float getPrice(int count, String event) {
-       String url =  "http://localhost:9090/prices/"+event;
+       String url =  "http://PRICE-SERVICE/prices/"+event;
        ResponseEntity<Price> responseEntity = restTemplate.getForEntity(url, Price.class);
        Price price = responseEntity.getBody();
        float totalTicketPrice = price.getPrice()* count;
